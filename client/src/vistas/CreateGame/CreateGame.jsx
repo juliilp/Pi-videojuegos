@@ -76,7 +76,7 @@ const CreateGame = () => {
   };
 
   const handleChange = (e) => {
-    console.log(input.rating);
+    console.log(input);
     setErrorsForm(validate(input))
     setInput({
       ...input,
@@ -95,9 +95,6 @@ const CreateGame = () => {
     })
   }
 
-
-console.log(errorBtn);
-console.log(errorsForm);
   return (
 
     <div className="container_createGame">

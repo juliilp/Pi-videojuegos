@@ -23,7 +23,11 @@ const getVideoGamesById = async (req, res) => {
   const { id } = req.params;
   if (id.includes("-")) {
     const findId = await Videogames.findByPk(id)
-    res.send(findId)
+    try {
+      res.status(200).send(findId)
+    } catch (error) {
+      res.status(400).send("Error VideoGamesss")
+    }
   }else {
     const api =  await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
     const data = api.data
@@ -35,7 +39,7 @@ const getVideoGamesById = async (req, res) => {
             description : data.description,
             releasedData: data.released,
             rating : data.rating,
-            platforms: data.platforms && data.platforms.map((p) => p.platform)
+            platforms: data.platforms && data.platforms.map((p) => p.platform.name)
         }]
     res.send(obj)
   }
@@ -45,7 +49,7 @@ const postVideoGames = async (req, res) => {
   const { image, name, description, rating, platforms, releaseData, genres } = req.body;
   try {
     const newVideoGame = await Videogames.create({image,name,description,rating,platforms,releaseData});
-
+    console.log(name);
     let findGenres = await Genres.findAll({
       where: { name: genres}});
     await newVideoGame.addGenres(findGenres);

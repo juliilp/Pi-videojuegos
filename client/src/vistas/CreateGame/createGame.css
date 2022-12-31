@@ -1,0 +1,120 @@
+.container_createGame {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://imgs.search.brave.com/qMvfixTgWFAfkAo5pYSb8kEm5VSlEODqABXyxP3nwcE/rs:fit:1200:819:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuYWxmYWJldGFq/dWVnYS5jb20vYWJq/X3B1YmxpY19maWxl/cy9tdWx0aW1lZGlh/L2ltYWdlbmVzLzIw/MTYxMS8xNzA1MjYu/YWxmYWJldGFqdWVn/YS1mb25kb3MtZGUt/cGFudGFsbGEtdmlk/ZW9qdWVnb3MtMjAt/MTgxMTE2LmpwZw");
+    background-size: cover;
+    font-family: 'Rubik Bubbles', cursive;
+    text-align: center;
+}
+
+.createForm {
+    position: relative;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    border: 3px solid red;
+    background-color: rgb(34, 48, 48);
+    border-radius: 5px;
+    box-shadow: 1px -4px 107px 41px rgba(0,0,0,0.89) inset;
+    -webkit-box-shadow: 1px -4px 107px 41px rgba(0,0,0,0.89) inset;
+    -moz-box-shadow: 1px -4px 107px 41px rgba(0,0,0,0.89) inset;
+}
+
+.create_title {
+    text-align: center;
+}
+
+
+.create_name, .create_image, .create_description, .create_rating, .create_platforms, .create_releaseData {
+    position: relative;
+    right: 145px;
+    margin-bottom: 20px;
+}
+
+.create_genres {
+    position: relative;
+    bottom: 360px;
+    left: 130px;
+}
+
+.input_create_name {
+    width: 150px;
+}
+
+.input_create_image {
+    width: 155px;
+}
+
+.label_description {
+    position: relative;
+    bottom: 100px;
+    left: 145px;
+}
+
+textarea {
+    position: relative;
+    resize: none;
+    top: 15px;
+    width: 200px;
+    height: 100px;
+}
+
+.createError {
+    position: relative;
+    right: 100px;
+    top: -670px;
+    font-weight: 700;
+    color: red;
+    letter-spacing: 3px;
+    animation-name: animationError;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animationError {
+    0% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+    75% {
+        color: black;
+    }
+    100%{
+        color: red;
+    }
+}
+
+.buttons_create {
+    position: relative;
+    top: -600px;
+    left: 170px;
+}
+
+.button_volver, .button_submit {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.button_submit:disabled {
+    background-color: gray;
+}
+
+.button_submit:enabled {
+    background-color: yellow;
+}
+
+.li_container {
+    position: relative;
+    bottom: 370px;
+    left: 360px;
+    width: 150px;
+    height: 100%;
+}

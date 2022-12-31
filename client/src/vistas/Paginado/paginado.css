@@ -1,0 +1,17 @@
+.boton_paginado {
+    position: relative;
+    margin-right: 20px;
+    top: 35px;
+    left: 30%;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.boton_paginado:hover {
+    color: white;
+    background-color: black;
+    transform: scale(1.4);
+}

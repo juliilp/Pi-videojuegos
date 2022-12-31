@@ -1,0 +1,47 @@
+.container_home {
+    background-color: #000000;
+opacity: 1;
+background-image:  linear-gradient(30deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(150deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(30deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(150deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(60deg, #20202277 25%, transparent 25.5%, transparent 75%, #20202277 75%, #20202277), linear-gradient(60deg, #20202277 25%, transparent 25.5%, transparent 75%, #20202277 75%, #20202277);
+background-size: 80px 140px;
+background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.container_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 60px;
+    margin-right: 20px;
+}
+
+.container_nav {
+    position: relative;
+    left:  70px;
+}
+
+.searchbar {
+    position: absolute;
+    right: 95px;
+    top: 27px;
+}
+
+.createGame {
+    position: absolute;
+    padding: 10px 40px;
+    top: 27px;
+    left: 80px;
+    background-color: #252525;
+    font-weight: 700;
+    color: rgb(255, 192, 192);
+    cursor: pointer;
+}
+
+.select_home {
+    background-color: #252525;
+    color: rgb(255, 192, 192);
+    position: relative;
+    left : 360px;
+    border-radius: 0.25em;
+    padding: 5px 0px;
+    text-align: center;
+    top: 30px;
+}

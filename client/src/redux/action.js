@@ -75,7 +75,7 @@ export const getDetail = (id) => {
       .then((data) => {
         dispatch({
           type: GET_DETAILS,
-          payload: data,
+          payload: data
         });
       });
   };

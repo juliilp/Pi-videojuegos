@@ -1,6 +1,7 @@
 const { Genres, Videogames } = require("../db")
+const { API_KEY } = process.env;
 const getAllGames = require("../helpers/getAllGames");
-
+const axios = require("axios")
 const getVideoGames = async (req, res) => {
   const { name } = req.query;
   try {
@@ -20,12 +21,23 @@ const getVideoGames = async (req, res) => {
 
 const getVideoGamesById = async (req, res) => {
   const { id } = req.params;
-  try {
-    const allGames = await getAllGames();
-    const GameId = allGames.filter((e) => e.id.toString() === id.toString());
-    res.status(200).send(GameId);
-  } catch (error) {
-    res.status(400).send(error.message);
+  if (id.includes("-")) {
+    const findId = await Videogames.findByPk(id)
+    res.send(findId)
+  }else {
+    const api =  await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
+    const data = api.data
+        const obj = [{
+            id : data.id,
+            name: data.name,
+            image: data.background_image,
+            genres: data.genres.map((e) => e.name),
+            description : data.description,
+            releasedData: data.released,
+            rating : data.rating,
+            platforms: data.platforms && data.platforms.map((p) => p.platform)
+        }]
+    res.send(obj)
   }
 };
 

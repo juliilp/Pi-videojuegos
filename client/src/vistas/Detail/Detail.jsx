@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getDetail } from "../../redux/action";
@@ -16,33 +16,33 @@ import { getDetail } from "../../redux/action";
 const Detail = (props) => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const getDetails = useSelector((state) => state.gameDetail);
+  const DetailState = useSelector((state) => state.gameDetail);
   useEffect(() => {
     dispatch(getDetail(id));
   }, [dispatch]);
+  console.log(DetailState)
+
 
   return (
-
-    <div>
-      {
-      getDetail.length ? (
-        getDetails.map((vg) => {
-          return (
-            <div>
-              <h1>{vg.name}</h1>
-              <img src={vg.image} alt="Image Not Found" />
-              <h3>{vg.rating}</h3>
-              <h3>{vg.platforms}</h3>
-              <h3>{vg.released}</h3>
-              <h4>Generos:  {vg.genres ? vg.genres : vg.Genres.map((e) => `  ${e.name}  ` )}</h4>
-              <Link exact to="/home"> <button>Volver</button> </Link>
-            </div>
-          );
-        })
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+      <div>
+        {DetailState ? 
+          DetailState.map((vg) => {
+            return (
+                <div>
+                  <img src={vg.image} ></img>
+                  <h1>{vg.name}</h1>
+                  <p>{vg.releasedData}</p>
+                  <p>{vg.rating}</p>
+                  <p>{vg.genres ? vg.genres : vg.Genres.name}</p>
+                  <p>{vg.description}</p>
+                  
+                  {vg.platforms.map((e) => <span> {e.name}</span> )}
+                  
+                </div>
+            )
+          }) : <p>Loading...</p>  
+      }
+      </div>
   );
 };
 

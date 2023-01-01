@@ -4,6 +4,8 @@ opacity: 1;
 background-image:  linear-gradient(30deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(150deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(30deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(150deg, #202022 12%, transparent 12.5%, transparent 87%, #202022 87.5%, #202022), linear-gradient(60deg, #20202277 25%, transparent 25.5%, transparent 75%, #20202277 75%, #20202277), linear-gradient(60deg, #20202277 25%, transparent 25.5%, transparent 75%, #20202277 75%, #20202277);
 background-size: 80px 140px;
 background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+height: 100vw;
+width: 100vw;
 }
 
 .container_cards {

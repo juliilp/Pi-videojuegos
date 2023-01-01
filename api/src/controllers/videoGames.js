@@ -22,9 +22,14 @@ const getVideoGames = async (req, res) => {
 const getVideoGamesById = async (req, res) => {
   const { id } = req.params;
   if (id.includes("-")) {
-    const findId = await Videogames.findByPk(id)
+    const findId = await Videogames.findOne({
+      where: {
+        id: id
+      },
+      include: Genres
+    })
     try {
-      res.status(200).send(findId)
+      res.status(200).send([findId])
     } catch (error) {
       res.status(400).send("Error VideoGamesss")
     }
@@ -48,6 +53,7 @@ const getVideoGamesById = async (req, res) => {
 const postVideoGames = async (req, res) => {
   const { image, name, description, rating, platforms, releaseData, genres } = req.body;
   try {
+      
     const newVideoGame = await Videogames.create({image,name,description,rating,platforms,releaseData});
     console.log(name);
     let findGenres = await Genres.findAll({

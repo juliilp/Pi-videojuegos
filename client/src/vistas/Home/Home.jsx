@@ -67,7 +67,7 @@ const Home = () => {
   return (
     <div className="container_home">
       <div className="container_nav">
-      <Link exact to="/home/createGame">
+      <Link exact to="/createGame">
         <button className="createGame" >Create your VideoGames!</button>
       </Link>
       <select  className="select_home" defaultValue="default" onChange={(e) => orderHandlerName(e)}>

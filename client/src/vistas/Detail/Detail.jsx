@@ -36,14 +36,14 @@ const Detail = (props) => {
                   
                   <p>{vg.releasedData}</p>
                   <p>Rating: {vg.rating}</p>
-                  <p> Genres: {vg.genres ? vg.genres : vg.Genres.name}</p>
-                  <p> Platforms:  {vg.platforms + "|   "}</p>
+                  <p> Genres: {vg.genres ? vg.genres : vg.Genres.map((g) => `${g.name} | `)}</p>
+                  <p> Platforms:  {vg.platforms + " |   "}</p>
                   <br/>
                   <Link to='/home' ><button className="button_detail" >Volver</button></Link>
                 </div>
                 <div> 
                 <div className="card_detail2" >
-                    <h1>{vg.name}</h1>
+                    <h1>{vg.name }</h1>
                   <p>{vg.description.replace(/<[^>]*>?/g,'')}</p>
                   </div>
                 </div>

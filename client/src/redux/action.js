@@ -161,18 +161,27 @@ export const FilterByApiyDB = (payload) => {
 
 
 
+// export const actionFilterGenres = (payload) => {
+//   return async function async (dispatch) {
+//     const api = await axios.get("http://localhost:3001/videogames")
+//     const filtros = api.data.filter((a) => a.createinDb)
+//     const filtros2= filtros.map((e) => e.Genres[0].name)
+//     const filtrosapi = api.data.filter((e) => e.genres)
+//     const filtrosdb = api.data.filter((e) => e.Genres)
+//     console.log(filtrosapi);           
+//     const data = api.data.filter((e) => e.genres ? e.genres.includes(payload) :  e.Genres[0].name.includes(payload))
+//     dispatch({
+//       type: FILTER_BY_GENRE,
+//       payload: data
+//     })
+//   }
+// }
+
 export const actionFilterGenres = (payload) => {
-  return async function async (dispatch) {
-    const api = await axios.get("http://localhost:3001/videogames")
-    const filtros = api.data.filter((a) => a.createinDb)
-    const filtros2= filtros.map((e) => e.Genres[0].name)
-    const filtrosapi = api.data.filter((e) => e.genres)
-    const filtrosdb = api.data.filter((e) => e.Genres)
-    console.log(filtrosapi);           
-    const data = api.data.filter((e) => e.genres ? e.genres.includes(payload) :  e.Genres[0].name.includes(payload))
+  return function(dispatch) {
     dispatch({
       type: FILTER_BY_GENRE,
-      payload: data
+      payload
     })
   }
 }

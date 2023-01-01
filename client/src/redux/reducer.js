@@ -111,9 +111,13 @@ const reducer = (state = initialState, action) => {
         allGames: [...state.allGamesOrigin, action.payload],
       };
       case FILTER_BY_GENRE :
+        const main = 
+        action.payload === 'All' ? 
+        state.allGamesOrigin :
+        state.allGamesOrigin.filter((e) => e.genres ? e.genres.includes(action.payload) : e.Genres[0].name.includes(action.payload))
         return{
           ...state,
-          allGames: action.payload,
+          allGames: main
         }
     default:
       return {

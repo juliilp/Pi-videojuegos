@@ -51,14 +51,14 @@ const reducer = (state = initialState, action) => {
       if (action.payload === "asc") {
         return {
           ...state,
-          allGames: state.allGamesOrigin.sort((a, b) => {
+          allGames: state.allGames.sort((a, b) => {
             return a.name.localeCompare(b.name);
           }),
         };
       } else if (action.payload === "desc") {
         return {
           ...state,
-          allGames: state.allGamesOrigin.sort((a, b) => {
+          allGames: state.allGames.sort((a, b) => {
             return b.name.localeCompare(a.name);
           }),
         };
@@ -78,14 +78,14 @@ const reducer = (state = initialState, action) => {
         if (action.payload === 'asc') {
           return {
             ...state,
-            allGames: state.allGamesOrigin.sort((a, b) => {
+            allGames: state.allGames.sort((a, b) => {
               return a.rating - b.rating;
             }),
           };
         } else if (action.payload === 'desc') {
           return {
             ...state,
-            allGames: state.allGamesOrigin.sort((a, b) => {
+            allGames: state.allGames.sort((a, b) => {
               return b.rating - a.rating;
             }),
           };
@@ -111,10 +111,20 @@ const reducer = (state = initialState, action) => {
         allGames: [...state.allGamesOrigin, action.payload],
       };
       case FILTER_BY_GENRE :
+        
         const main = 
         action.payload === 'All' ? 
         state.allGamesOrigin :
-        state.allGamesOrigin.filter((e) => e.genres ? e.genres.includes(action.payload) : e.Genres[0].name.includes(action.payload))
+        state.allGamesOrigin.filter((e) => { 
+          let generosString = ""
+            console.log(e.Genres);
+            if(e.Genres) {
+              for (let i = 0; e.Genres.length > i ; i++) {
+                generosString += e.Genres[i].name
+        }
+            }
+            console.log(generosString); 
+          return e.genres ? e.genres.includes(action.payload) : generosString.includes(action.payload);})
         return{
           ...state,
           allGames: main

@@ -30,6 +30,7 @@ const SearchBar = () => {
   const buttonStyles = {
     padding: "8px 15px",
     borderRadius: "5px",
+    cursor: "pointer",
   }
 
   return (

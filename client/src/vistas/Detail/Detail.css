@@ -13,6 +13,7 @@
 
 .card_detail {
     position: relative;
+    top: 0;
     width: 500px;
     height: 600px;
     left: 13%;
@@ -23,6 +24,7 @@
 
 .card_detail2 {
     position: relative;
+    top: 0;
     width: 500px;
     height: 600px;
     margin-right: 30px;

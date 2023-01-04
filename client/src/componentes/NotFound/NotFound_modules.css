@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container_notfound {
+    background: url("../../imagenes/notfound.jpg");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Bitter', serif;
+}
+
+.tittle_notfound {
+    position: relative;
+    top: 10%;
+    text-align: center;
+    letter-spacing: 10px;
+    color: white
+}
+
+.button_notfound {
+    position: relative;
+    top: 30%;
+    left: 10%;
+    padding: 20px 70px;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    background-color: rgb(70, 69, 69);
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.button_notfound:hover {
+    background-color: black;
+    color: yellow;
+    transform: scale(1);
+}

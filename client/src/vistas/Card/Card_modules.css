@@ -39,7 +39,7 @@ cursor: pointer;
   .card:hover {
     color: #07ff07;
     box-shadow: 2px 2px 15px #07ff07 inset;
-    
+    transform: scale(1.05);
   }
 
   .cardinfo {

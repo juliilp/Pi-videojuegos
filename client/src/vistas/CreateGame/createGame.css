@@ -8,6 +8,7 @@
     background-size: cover;
     font-family: 'Rubik Bubbles', cursive;
     text-align: center;
+    color: rgb(236, 188, 188);
 }
 
 .createForm {
@@ -65,7 +66,7 @@ textarea {
 .createError {
     position: relative;
     right: 100px;
-    top: -670px;
+    top: -630px;
     font-weight: 700;
     color: red;
     letter-spacing: 3px;

@@ -46,7 +46,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         allGames:
           action.payload === 'all' ? state.allGamesOrigin : createdFilter,
-      };
+      }
     case FILTER_BY_NAME:
       if (action.payload === "asc") {
         return {

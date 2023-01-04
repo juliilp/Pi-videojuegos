@@ -84,7 +84,7 @@ const Home = () => {
       </select>
 
       <select  className="select_home"   onChange={(e) => filterByVideoGamesHandler(e)} >
-        <option>Creados por mi o Api-key</option>
+        <option >Creados por mi o Api-key</option>
         <option value='all'>All</option>
         <option value='db'>Create for me</option>
         <option value='api'>Api-key</option>
